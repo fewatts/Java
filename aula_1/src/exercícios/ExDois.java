@@ -12,7 +12,7 @@ public class ExDois {
 			System.out.print("Digite a nota "+ i);
 			System.out.println(":\n");
 			nota = leia.nextFloat();
-			soma = nota + soma;
+			soma += nota;
 		}
 		media = soma / 4;
 		System.out.printf("A média final é de: %.1f", media);
