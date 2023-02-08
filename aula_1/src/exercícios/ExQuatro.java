@@ -23,5 +23,6 @@ public class ExQuatro {
 		result = (n1 * n2) - (n3 * n4);
 		
 		System.out.println("Diferença: "+ result);
+		leia.close();
 	}
 }

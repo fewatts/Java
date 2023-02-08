@@ -24,6 +24,8 @@ public class ExTres {
 		sal_liqui = sal_bruto + adic_not + (hora_extra * 5) - descont;
 		
 		System.out.printf("Salário líquido: %.2f", sal_liqui);
+		
+		leia.close();
 	}
 
 }

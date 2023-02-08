@@ -16,6 +16,8 @@ public class ExUm {
 		
 		novo_salario = salario + abono;
 		System.out.printf("O novo salário é de: %.2f", novo_salario);
+		
+		leia.close();
 
 	}
 
