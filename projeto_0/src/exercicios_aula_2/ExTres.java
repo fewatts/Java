@@ -25,7 +25,7 @@ public class ExTres {
 			System.out.printf("\n%s está apto/a para doar sangue! ", nome);
 		}
 		else if(idade >= 60 && idade <= 69) {
-			if(doacao == true) {
+			if(doacao) {
 				System.out.printf("\n%s não está apto/a para doar sangue! ", nome);
 			}else{
 				System.out.printf("\n%s está apto/a para doar sangue! ", nome);
