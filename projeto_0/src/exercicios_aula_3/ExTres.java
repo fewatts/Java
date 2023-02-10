@@ -9,14 +9,14 @@ public class ExTres {
 	public static void main(String[] args) {
 		int n = 1, soma_menor = 0, soma_maior = 0;
 		
-		while(n > 0) {
+		while(n >= 0) {
 			System.out.println("Digite uma idade: ");
 			n = leia.nextInt();
 			
 			if(n < 0) {
 				System.out.println(">>>> Fim <<<<\n");
 			}else {
-				if(n < 21) {
+				if(n < 21 && n != 0) {
 					soma_menor += 1;
 				}else if(n > 50) {
 					soma_maior += 1;
