@@ -17,7 +17,7 @@ public class Ex_03 {
 			}
 			
 		}
-		System.out.println("");
+		System.out.println();
 		System.out.println(" Matriz ");
 		for(int l = 0; l < Matriz.length; l++) {
 			for(int c = 0; c < Matriz.length; c++) {
@@ -25,7 +25,7 @@ public class Ex_03 {
 			}
 			System.out.println();
 		}
-		System.out.println("");
+		System.out.println();
 		System.out.println("Elementos da diagonal principal:");
 		for(int l = 0; l < Matriz.length; l++) {
 			for(int c = 0; c < Matriz.length; c++) {
@@ -37,7 +37,7 @@ public class Ex_03 {
 			}
 			
 		}
-		System.out.println("");
+		System.out.println();
 		System.out.println("Elementos da diagonal secundária: ");
 		for(int l = 0; l < Matriz.length; l++) {
 			for(int c = 0; c < Matriz.length; c++) {
@@ -48,6 +48,7 @@ public class Ex_03 {
 			}
 			
 		}
+		System.out.println();
 		System.out.println("\nSoma dos elementos da diagonal principal: "+ soma_1);
 		System.out.println("\nSoma dos elementos da diagonal secundária: "+ soma_2);
 	}
