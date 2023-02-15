@@ -16,7 +16,7 @@ public class ExBeecrwod13 {
 		}
 		System.out.println("Em ordem invertida: ");
 		for(int i = vetor.length - 1; i >= 0; i--) {
-			System.out.printf("posição:%d Nº:%d \n",i , vetor[i]);
+			System.out.printf(" posição:%d Nº:%d \n",i , vetor[i]);
 		}
 	}
 
