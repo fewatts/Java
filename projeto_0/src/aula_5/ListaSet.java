@@ -6,6 +6,7 @@ import java.util.Set;
 public class ListaSet {
 
 	public static void main(String[] args) {
+		//Usado em criptografia
 		Set<Double> notas = new HashSet<Double>();
 		
 		notas.add(7.0);
