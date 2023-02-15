@@ -42,8 +42,7 @@ public class Lista {
 					notas.forEach(System.out::println);
 				break;
 			case 3:
-				System.out.println();
-				System.out.println("procurar nota: ");
+				System.out.println("\nprocurar nota: ");
 				nota = leia.nextDouble();
 				System.out.println("A nota " + nota + " existe? " + notas.contains(nota));
 				if(notas.contains(nota))
