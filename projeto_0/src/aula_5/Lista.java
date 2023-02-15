@@ -27,13 +27,15 @@ public class Lista {
 			switch(op) {
 			case 1:
 				System.out.println();
-				System.out.println("Digite uma nota de 1 a 10: ");
-				nota = leia.nextDouble();
+				while(nota <= 0 || nota > 10) {
+					System.out.println("Digite uma nota de 1 a 10: ");
+					nota = leia.nextDouble();
+				}
 				notas.add(nota);
 				break;
 			case 2:
 				System.out.println();
-				System.out.println("Lista de notas");
+				System.out.println("Lista de notas: ");
 				if(notas.isEmpty())
 					System.out.println("Base de dados ainda está vazia...");
 				else
@@ -46,6 +48,8 @@ public class Lista {
 				System.out.println("A nota " + nota + " existe? " + notas.contains(nota));
 				if(notas.contains(nota))
 					System.out.printf("O índice da nota é: " + notas.indexOf(nota));
+				else
+					System.out.println("Esse número não foi achado...");
 				System.out.println();
 				break;
 			case 4:
