@@ -6,18 +6,18 @@ public class ExUm {
 	static Scanner leia = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		int soma = 0, quant;
+		int soma__ = 0, quant;
 		
-		System.out.println("<<<< Somador de números >>>>");
-		System.out.println("¬Deseja somar quantos números? ");
+		System.out.println("<<<< soma__dor de números >>>>");
+		System.out.println("¬Deseja soma__r quantos números? ");
 		
 		quant = leia.nextInt();
 		
 		for(int i = 1; i <= quant; i++) {
 			System.out.printf("Digite o Nº %d: ", i);
-			soma += leia.nextInt();
+			soma__ += leia.nextInt();
 		}
-		System.out.println("A soma dos valores é igual a "+ soma);
+		System.out.println("A soma__ dos valores é igual a "+ soma__);
 	}
 
 }
