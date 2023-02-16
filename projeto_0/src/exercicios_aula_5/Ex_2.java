@@ -9,7 +9,8 @@ public class Ex_2 {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> numeros = new ArrayList<Integer>();
-		int j = 1, num;
+		Integer j = 1;
+		int num;
 		
 		for(int i = 0; i < 10; i++) {
 			numeros.add(j);

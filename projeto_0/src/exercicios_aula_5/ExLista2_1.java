@@ -14,7 +14,7 @@ public class ExLista2_1 {
 		String cliente;
 		
 		do {
-			System.out.printf("1-Adicionar Cliente na fila\n2-Listar todos os clientes\n3-Retirar cliente da fila\n0-Sair");
+			System.out.printf("\n1-Adicionar Cliente na fila\n2-Listar todos os clientes\n3-Retirar cliente da fila\n0-Sair");
 			System.out.println("\nSua opção: ");
 			op = leia.nextInt();
 			
@@ -24,7 +24,7 @@ public class ExLista2_1 {
 				leia.skip("\\R?");
 				cliente = leia.nextLine();
 				fila.add(cliente);
-				System.out.println("Cliente adicionado!\n");
+				System.out.println("\nCliente adicionado!\n");
 				break;
 			case 2:
 				System.out.println("\nLista de clientes na fila: ");
@@ -36,20 +36,18 @@ public class ExLista2_1 {
 				break;
 			case 3:
 				if(fila.isEmpty())
-					System.out.println("Fila ainda está vazia...\n");
+					System.out.println("fila ainda está vazia...\n");
 				else {
 					System.out.println("Retirar um cliente da fila: ");
-					System.out.println(fila.poll());
-					System.out.println("\nCliente chamado!\n");
-					System.out.println("\nFila atualizada: ");
-					if(fila.isEmpty())
-						System.out.println("A fila acabou...");
+					System.out.println(fila.peek());
+					fila.poll();
+					System.out.println("\ncliente chamado!!");
+				}
+					System.out.println("\nfila atualizada: ");
+				if(fila.isEmpty())
+					System.out.println("A fila acabou...");
+				else
 					fila.forEach(System.out::println);
-					System.out.println();
-				}
-				for(var elem : fila){
-					System.out.println(elem);
-				}
 				break;
 			case 0:
 				System.out.println("programa finalizado! Volte sempre!");
