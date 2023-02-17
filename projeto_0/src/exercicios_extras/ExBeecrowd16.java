@@ -48,7 +48,6 @@ public class ExBeecrowd16 {
 			
 			}
 			System.out.println("\n");
-
 		}
 
 	}
