@@ -25,12 +25,13 @@ public class MenuCalculadora {
 			a = leia.nextDouble();
 			System.out.println("Digite o 2º valor: ");
 			b = leia.nextDouble();
-			switch(op) {//Se for mais de um comando usar chaves
+			//Se for mais de um comando usar chaves
+			switch(op) {
 			case 1 -> System.out.println("\nSoma: " + calc.soma(a, b));
-			case 2 -> System.out.println("Subtração: "+ calc.subtracao(a, b));
-			case 3 -> System.out.println("Multiplicação: "+ calc.multiplicacao(a, b));
-			case 4 -> System.out.println("Divisão: " + calc.divisao(a, b));
-			default -> System.out.println("Opção inválida...");
+			case 2 -> System.out.println("\nSubtração: "+ calc.subtracao(a, b));
+			case 3 -> System.out.println("\nMultiplicação: "+ calc.multiplicacao(a, b));
+			case 4 -> System.out.println("\nDivisão: " + calc.divisao(a, b));
+			default -> System.out.println("\nOpção inválida...");
 			}
 			
 		}
