@@ -2,7 +2,7 @@ package exercicios_aula_7;
 
 import exercicios_aula_7.conta.Cliente;
 
-public class Main {
+public class TestaCliente {
 
 	public static void main(String[] args) {
 		Cliente c_1 = new Cliente("Fernando Alves", "04/10/1999", "49802989864", "Masculino", 1723.24f);
