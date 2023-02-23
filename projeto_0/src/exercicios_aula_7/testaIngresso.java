@@ -16,14 +16,10 @@ public class testaIngresso {
 		System.out.println("\n");
 		
 		Vip vip = new Vip("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-5343", 120.0f, "Hardfall", "F");
-<<<<<<< HEAD
 	    MeiaEntrada meia = new MeiaEntrada("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-765456", 50.0f, "HÖR", "Estudante");
 	    Vip vip2 = new Vip("Tigerhead", "sjhgfdghj@gmail.com", "SDFGHJK-gf-5343", 120.0f, "HÖR", "G");
-=======
-	    	MeiaEntrada meia = new MeiaEntrada("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-765456", 50.0f, "HÖR", "Estudante");
->>>>>>> 6f2b4a3527dcf2368170243550ebb3edd394d068
 	    
-	    	vip.visualizar();
+    	vip.visualizar();
 		System.out.println("\n");
 		meia.visualizar();
 		System.out.println("\n");
