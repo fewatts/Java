@@ -48,6 +48,6 @@ public class Curso {
 		System.out.println("Matrícula: " + getMatricula());
 		System.out.println("Data de nascimento: " + getNascimento());
 		System.out.println("Campus: " + getCampus());
-		System.out.println("Curso: " + getCurso() + "\n");
+		System.out.println("Curso: " + getCurso());
 	}
 }
