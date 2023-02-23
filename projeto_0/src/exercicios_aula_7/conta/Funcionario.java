@@ -48,6 +48,6 @@ public class Funcionario {
 		System.out.println("Nascimento: " + getNascimento());
 		System.out.println("Sexo: " + getSexo());
 		System.out.println("Cargo: " + getCargo());
-		System.out.println("Horário: " + getHorario() + "\n\n");
+		System.out.println("Horário: " + getHorario());
 	}
 }
