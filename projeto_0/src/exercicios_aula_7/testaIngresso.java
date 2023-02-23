@@ -16,9 +16,9 @@ public class testaIngresso {
 		System.out.println("\n");
 		
 		Vip vip = new Vip("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-5343", 120.0f, "Hardfall", "F");
-	    MeiaEntrada meia = new MeiaEntrada("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-765456", 50.0f, "HÖR", "Estudante");
+	    	MeiaEntrada meia = new MeiaEntrada("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-765456", 50.0f, "HÖR", "Estudante");
 	    
-	    vip.visualizar();
+	    	vip.visualizar();
 		System.out.println("\n");
 		meia.visualizar();
 		System.out.println("\n");
