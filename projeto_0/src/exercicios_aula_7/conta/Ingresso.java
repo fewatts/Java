@@ -48,7 +48,7 @@ public class Ingresso {
 		System.out.println("E-mail: " + getEmail());
 		System.out.println("Número do ingresso: " + getNumero());
 		System.out.println("Valor: " + getValor());
-		System.out.println("Organizador: " + getOrganizador() + "\n\n");
+		System.out.println("Organizador: " + getOrganizador());
 	}
 }
 
