@@ -17,11 +17,13 @@ public class testaIngresso {
 		
 		Vip vip = new Vip("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-5343", 120.0f, "Hardfall", "F");
 	    MeiaEntrada meia = new MeiaEntrada("Fernando", "sdfsgfd@gmail.com", "SVAHD7-gf-765456", 50.0f, "HÖR", "Estudante");
+	    Vip vip2 = new Vip("Tigerhead", "sjhgfdghj@gmail.com", "SDFGHJK-gf-5343", 120.0f, "HÖR", "G");
 	    
 	    vip.visualizar();
 		System.out.println("\n");
 		meia.visualizar();
 		System.out.println("\n");
+		vip2.visualizar();
 	}
 
 }
