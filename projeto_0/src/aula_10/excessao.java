@@ -7,7 +7,7 @@ public class excessao {
 	
 	static Scanner ler = new Scanner(System.in);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MinhaExcecao {
 		int dividendo = 0, divisor = 0, resp = 0;
 		boolean loop = true;
 		while(true) {
