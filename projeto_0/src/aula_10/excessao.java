@@ -46,7 +46,7 @@ public class excessao {
 		
 	}
 
-	public static void divide(int dividendo, int divisor) {
+	public static void divide(int dividendo, int divisor) throws MinhaExcecao {
 		System.out.println("Divisão = " + (dividendo / divisor));
 		
 	}
