@@ -13,8 +13,8 @@ public class Classe_1 {
 	static protected void metodoProtegido() {
 		System.out.println("Eu sou um método protected");
 	}
-	static private void metodoPrivado() {
+	/*static private void metodoPrivado() {
 		System.out.println("Eu sou um método private");
-	}
+	}*/
 
 }

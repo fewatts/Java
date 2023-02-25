@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 public class VariaveisConstantes {
 
+	static Scanner leia = new Scanner(System.in);
+
 	public static void main(String[] args) {
 		int numero;
 		String nome;
 		double area;
 		
 		DecimalFormat df = new DecimalFormat("###.##");
-		Scanner leia = new Scanner(System.in);
 		
 		System.out.println("Digite um número inteiro: ");
 		numero = leia.nextInt();

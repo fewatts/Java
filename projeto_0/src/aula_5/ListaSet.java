@@ -28,7 +28,7 @@ public class ListaSet {
 		System.out.println("A nota 7 existe? " + notas.contains(7.0));
 		System.out.println();
 		for(var nota : notas) {
-			System.out.println(nota.hashCode(nota));
+			System.out.println(nota.hashCode());
 		}
 		
 	}

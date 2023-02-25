@@ -17,8 +17,8 @@ public class Classe_2 {
 		System.out.println("Eu sou um Método Protegido!");
 	}
 	
-	private static void metodoPrivado_() {
+	/*private static void metodoPrivado_() {
 		System.out.println("Eu sou um Método Privado!");
-	}
+	}*/
 
 }
