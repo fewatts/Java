@@ -1,8 +1,8 @@
-package exercicios_extras;
+package testes_processo_seletivo;
 
 import java.util.ArrayList;
 
-public class ExIBM {
+public class ExList {
 
     public static int checkprice(ArrayList<String> produtos, ArrayList<Float> precoProdutos, ArrayList<String> produtosVendidos, ArrayList<Float> vendaProdutos){
         int error = 0;
