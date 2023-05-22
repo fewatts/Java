@@ -9,7 +9,7 @@ public class HrForMath {
     public static void main(String[] args) {
         System.out.println("Repeat (int): ");
         int t = sc.nextInt();
-        for (int i = 0; i < t; i++) {
+        for(int i = 0; i < t; i++){
             System.out.println("a: ");
             int a = sc.nextInt();
             System.out.println("b: ");
@@ -18,7 +18,7 @@ public class HrForMath {
             int n = sc.nextInt();
             System.out.println();
             int calc = a;
-            for (int j = 0; j < n; j++) {
+            for(int j = 0; j < n; j++){
                 calc += (Math.pow(2, j) * b);
                 System.out.print(calc + " ");
             }

@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class HrStrToken {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-        if (!in.hasNext()) {
+        if(!in.hasNext()){
             System.out.println(0);
-        } else {
+        }else{
             String input = in.nextLine();
             String[] a = input.trim().split("[ !,?._'@]+");
             ArrayList<String> listOfStrings = new ArrayList<String>(Arrays.asList(a));
