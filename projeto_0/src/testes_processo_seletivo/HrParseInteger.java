@@ -2,7 +2,7 @@ package testes_processo_seletivo;
 
 import java.util.Scanner;
 
-public class HackerRankParseInteger {
+public class HrParseInteger {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         int n = sc.nextInt();

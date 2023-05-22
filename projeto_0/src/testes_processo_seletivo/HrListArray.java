@@ -2,7 +2,7 @@ package testes_processo_seletivo;
 
 import java.util.ArrayList;
 
-public class ExList {
+public class HrListArray {
 
     public static int checkprice(ArrayList<String> produtos, ArrayList<Float> precoProdutos, ArrayList<String> produtosVendidos, ArrayList<Float> vendaProdutos){
         int error = 0;

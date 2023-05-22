@@ -3,7 +3,7 @@ package testes_processo_seletivo;
 import java.time.LocalDate;
 import java.util.Calendar;
 
-public class HackerRank {
+public class HrCalendar {
     public static void main(String[] args) {
         System.out.println(findDay(10, 4, 1999));
     }

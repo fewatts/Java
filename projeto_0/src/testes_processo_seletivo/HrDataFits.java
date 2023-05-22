@@ -2,7 +2,7 @@ package testes_processo_seletivo;
 
 import java.util.Scanner;
 
-public class DataFits {
+public class HrDataFits {
     static String fitDataType(String numString) {
         String answer = "";
         try {

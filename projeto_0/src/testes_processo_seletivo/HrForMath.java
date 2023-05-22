@@ -2,7 +2,7 @@ package testes_processo_seletivo;
 
 import java.util.Scanner;
 
-public class HackerRankForMath {
+public class HrForMath {
 
     static Scanner sc = new Scanner(System.in);
 
