@@ -8,11 +8,11 @@ public class HrTagRemover {
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
         int testCases = Integer.parseInt(in.nextLine());
-        String regexPatern = "(<[^>]*>)";
-        Pattern stringPatern = Pattern.compile(regexPatern);
+        String regexPattern = "(<[^>]*>)";
+        Pattern stringPattern = Pattern.compile(regexPattern);
         while(testCases > 0){
             String line = in.nextLine();
-            Matcher match = stringPatern.matcher(line);
+            Matcher match = stringPattern.matcher(line);
             String previousHTMLTag = null;
             int previousTagPos = -1;
             boolean didFind = false;
