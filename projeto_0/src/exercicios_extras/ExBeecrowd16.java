@@ -3,53 +3,50 @@ package exercicios_extras;
 import java.util.Scanner;
 
 public class ExBeecrowd16 {
-	
-	static Scanner leia = new Scanner(System.in);
+	static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		int n;
-		
-		System.out.println("Digite um número: ");
-		n = leia.nextInt();
-		int[][] matriz = new int[n][n];
-		
-		for(int l = 0; l < matriz.length; l++) {
-			for(int c = 0; c < matriz.length; c++) {
-				matriz[l][c] = 1;
-			}
-		}
-		System.out.println();
-		for(int l = 0; l < matriz.length; l++) {
-			for(int c = 0; c < matriz.length; c++) {
-				if(n == 1)
-					System.out.printf("  %d  ", matriz[l][c]);
-				else if(n == 2)
-					System.out.printf("  %d  ", matriz[l][c]);
-				else if(n == 3) {
-					if(l == 1 && c == 1) 
-						System.out.printf("  %d  ", matriz[l][c] + 1);
-					else
-						System.out.printf("  %d  ", matriz[l][c]);
-				}
-				else if(n == 4) {
-					if(l == 1 && c == 1 || l == 1 && c == 2 || l == 2 && c == 1 || l == 2 && c == 2) 
-						System.out.printf("  %d  ", matriz[l][c] + 1);
-					else
-						System.out.printf("  %d  ", matriz[l][c]);
-				}
-				else if(n == 5) {
-					if(l == 1 && c == 1 || l == 1 && c == 2 || l == 1 && c == 3 || l == 2 && c == 1 || l == 2 && c == 3 || l == 3 && c == 1 || l == 3 && c == 2 || l == 3 && c == 3) 
-						System.out.printf("  %d  ", matriz[l][c] + 1);
-					else if(l == 2 && c == 2)
-						System.out.printf("  %d  ", matriz[l][c] + 2);
-					else
-						System.out.printf("  %d  ", matriz[l][c]);
-				}
-			
-			}
-			System.out.println("\n");
-		}
 
-	}
-	
+        while (true) {
+            int n = scanner.nextInt();
+            if (n == 0) {
+                break;
+            }
+            int[][] array = buildArray(n);
+            printArray(array);
+            System.out.println();
+        }
+
+    }
+
+    public static int[][] buildArray(int n) {
+        int[][] array = new int[n][n];
+        int start = 0;
+        int end = n - 1;
+        int num = 1;
+
+        while (start <= end) {
+            for (int i = start; i <= end; i++) {
+                array[start][i] = num;
+                array[end][i] = num;
+                array[i][start] = num;
+                array[i][end] = num;
+            }
+            start++;
+            end--;
+            num++;
+        }
+        return array;
+    }
+
+    public static void printArray(int[][] array) {
+        for (int[] row : array) {
+            for (int num : row) {
+                System.out.printf("%3d ", num);
+            }
+            System.out.println();
+        }
+
+    }
+
 }
