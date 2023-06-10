@@ -23,7 +23,7 @@ public class HrListArray {
                 }
 
             }
-
+        
         } 
         return error;
     }
