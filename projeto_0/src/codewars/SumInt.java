@@ -5,9 +5,8 @@ public class SumInt {
         if (a == b) {
             return a;
         } else {
-            int sum = 0;
-            int start = 0;
-            int end = 0;
+            int sum = 0, start = 0, end = 0;
+
             if (a > b) {
                 start = b;
                 end = a;

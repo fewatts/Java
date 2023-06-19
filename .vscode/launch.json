@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ReverseArray",
+            "request": "launch",
+            "mainClass": "java/codewars.ReverseArray",
+            "projectName": "projeto_0"
+        },
+        {
+            "type": "java",
+            "name": "HighestAndLowest",
+            "request": "launch",
+            "mainClass": "java/codewars.HighestAndLowest",
+            "projectName": "projeto_0"
+        },
+        {
+            "type": "java",
+            "name": "CountByX",
+            "request": "launch",
+            "mainClass": "java/codewars.CountByX",
+            "projectName": "projeto_0"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
