@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LongestNoRepeat",
+            "request": "launch",
+            "mainClass": "java/codewars.LongestNoRepeat",
+            "projectName": "projeto_0"
+        },
+        {
+            "type": "java",
             "name": "ReverseArray",
             "request": "launch",
             "mainClass": "java/codewars.ReverseArray",
