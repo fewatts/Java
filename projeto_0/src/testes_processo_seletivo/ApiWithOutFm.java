@@ -13,6 +13,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ApiWithOutFm {
+
+    static public int findGreaterOrequal50(List<String> stringList) {
+
+        Pattern pattern = Pattern.compile("age=(\\d+)");
+        Matcher matcher = pattern.matcher(stringList.get(0));
+
+        int count = 0;
+
+        while (matcher.find()) {
+            int age = Integer.parseInt(matcher.group(1));
+            if (age >= 50)
+                count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
         System.setProperty("http.agent", "Chrome");
@@ -30,18 +46,7 @@ class ApiWithOutFm {
                 List<String> stringList = new ArrayList<>();
                 stringList.add(reader.readLine());
 
-                Pattern pattern = Pattern.compile("age=(\\d+)");
-                Matcher matcher = pattern.matcher(stringList.get(0));
-
-                int count = 0;
-
-                while (matcher.find()) {
-                    int age = Integer.parseInt(matcher.group(1));
-                    if (age >= 50)
-                        count++;
-                }
-
-                System.out.println(count);
+                System.out.println(findGreaterOrequal50(stringList));
 
             } catch (IOException ioEx) {
                 System.out.println(ioEx);
@@ -52,5 +57,5 @@ class ApiWithOutFm {
         }
 
     }
-    
+
 }
