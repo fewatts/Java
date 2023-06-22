@@ -9,6 +9,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.regex.Matcher;
+import java.util.ArrayList;
+import java.util.List;
 
 class ApiWithOutFm {
     public static void main(String[] args) {
@@ -25,11 +27,11 @@ class ApiWithOutFm {
                 InputStream inputStream = connection.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
-                String l = reader.readLine();
-                System.out.println(l);
+                List<String> stringList = new ArrayList<>();
+                stringList.add(reader.readLine());
 
                 Pattern pattern = Pattern.compile("age=(\\d+)");
-                Matcher matcher = pattern.matcher(l);
+                Matcher matcher = pattern.matcher(stringList.get(0));
 
                 int count = 0;
 
@@ -50,5 +52,5 @@ class ApiWithOutFm {
         }
 
     }
-
+    
 }
