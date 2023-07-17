@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MathCodewars",
+            "request": "launch",
+            "mainClass": "java/lib.MathCodewars",
+            "projectName": "projeto_0"
+        },
+        {
+            "type": "java",
+            "name": "StrsCodeWars",
+            "request": "launch",
+            "mainClass": "java/lib.StrsCodeWars",
+            "projectName": "projeto_0"
+        },
+        {
+            "type": "java",
             "name": "ApiWithOutFm",
             "request": "launch",
             "mainClass": "java/testes_processo_seletivo.ApiWithOutFm",

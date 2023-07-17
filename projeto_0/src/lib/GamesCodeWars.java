@@ -1,4 +1,4 @@
-package codewars;
+package lib;
 
 /**
  * A class containing games.

@@ -1,4 +1,4 @@
-package codewars;
+package lib;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -148,5 +148,41 @@ public class StrsCodeWars {
     public static int stringToNumber(String str) {
         return Integer.parseInt(str);
     }
-    
+
+    /**
+     * Converts an integer to its string representation.
+     *
+     * @param num The input integer to be converted to a string.
+     * @return The string representation of the input integer.
+     */
+    public static String numberToString(int num) {
+        return String.valueOf(num);
+    }
+
+    /**
+     * Converts a boolean value to its string representation.
+     *
+     * @param b The boolean value to be converted.
+     * @return The string representation of the boolean value ("true" or "false").
+     */
+    public static String convert(boolean b) {
+        return Boolean.toString(b);
+    }
+
+    /**
+     * Determines whether a person's name indicates if they are playing the banjo or
+     * not.
+     * If the first character of the name is 'R' or 'r', it suggests the person
+     * plays the banjo.
+     * Otherwise, it indicates that the person does not play the banjo.
+     *
+     * @param name The name of the person to check.
+     * @return A message indicating whether the person plays the banjo or not.
+     */
+    public static String areYouPlayingBanjo(String name) {
+        char firstChar = name.charAt(0);
+
+        return (firstChar == 'r' || firstChar == 'R') ? name + " plays banjo" : name + " does not play banjo";
+    }
+
 }

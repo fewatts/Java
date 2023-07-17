@@ -1,7 +1,11 @@
-package codewars;
+package lib;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Random;
+import java.time.LocalDate;
+import java.util.Calendar;
 
 /**
  * A utility class containing various mathematical operations on arrays and
@@ -330,6 +334,175 @@ public class MathCodewars {
             return sum;
         }
 
+    }
+
+    /**
+     * Generates a random phone number by rearranging the elements in the given
+     * integer array.
+     *
+     * @param numbers An array of integers representing the digits of the phone
+     *                number.
+     * @return A formatted string representing the phone number in the format.
+     */
+    public static String generatePhoneNumber(int[] numbers) {
+        Random random = new Random();
+
+        for (int i = 0; i < numbers.length; i++) {
+            int ran = random.nextInt(i + 1);
+
+            int temp = numbers[i];
+            numbers[i] = numbers[ran];
+            numbers[ran] = temp;
+        }
+
+        StringBuilder phoneNumber = new StringBuilder();
+        phoneNumber.append("(");
+        for (int i = 0; i < 3; i++) {
+            phoneNumber.append(numbers[i]);
+        }
+        phoneNumber.append(") ");
+        for (int i = 3; i < 6; i++) {
+            phoneNumber.append(numbers[i]);
+        }
+        phoneNumber.append("-");
+        for (int i = 6; i < 10; i++) {
+            phoneNumber.append(numbers[i]);
+        }
+
+        return phoneNumber.toString();
+    }
+
+    /**
+     * Finds the day of the week for the given date.
+     *
+     * @param month The month of the date (1-12).
+     * @param day   The day of the date (1-31).
+     * @param year  The year of the date.
+     * @return The day of the week as a string (e.g., "MONDAY").
+     */
+    public static String findDay(int month, int day, int year) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, day);
+        return LocalDate.of(year, month, day).getDayOfWeek().toString();
+    }
+
+    /**
+     * Determines the primitive data types that the given numeric string can be
+     * fitted into.
+     *
+     * @param numString The input numeric string.
+     * @return A string representing the data types that the number can be fitted
+     *         into.
+     */
+    public static String fitDataType(String numString) {
+        String answer = "";
+        try {
+            long num = Long.parseLong(numString);
+            answer = numString + " can be fitted in:\n";
+            if ((num <= Byte.MAX_VALUE) && (num >= Byte.MIN_VALUE)) {
+                answer = answer.concat("¬¬ byte\n¬¬ short\n¬¬ int\n¬¬ long");
+            } else if ((num <= Short.MAX_VALUE) && (num >= Short.MIN_VALUE)) {
+                answer = answer.concat("¬¬ short\n¬¬ int\n¬¬ long");
+            } else if ((num <= Integer.MAX_VALUE) && (num >= Integer.MIN_VALUE)) {
+                answer = answer.concat("¬¬ int\n¬¬ long");
+            } else {
+                answer = answer.concat("¬¬ long");
+            }
+        } catch (NumberFormatException e) {
+            answer = numString + " can't be fitted anywhere (primitive Types).";
+        }
+        return answer;
+    }
+
+    /**
+     * Checks for price errors between a list of products and their corresponding
+     * prices.
+     *
+     * @param produtos              A list of product names.
+     * @param precoProdutos         A list of product prices corresponding to the
+     *                              products.
+     * @param produtosVendidos      A list of sold product names.
+     * @param produtosVendidosPreco A list of sold product prices corresponding to
+     *                              the sold products.
+     * @return The number of price errors between sold products and their
+     *         corresponding prices.
+     */
+    public static int checkprice(
+            ArrayList<String> produtos,
+            ArrayList<Float> precoProdutos,
+            ArrayList<String> produtosVendidos,
+            ArrayList<Float> produtosVendidosPreco) {
+        int error = 0;
+        for (int i = 0; i < produtosVendidos.size(); i++) {
+            String produtoVendido = produtosVendidos.get(i);
+            Float produtoVendidoPreco = produtosVendidosPreco.get(i);
+
+            int produtoIndex = produtos.indexOf(produtoVendido);
+
+            if (produtoIndex >= 0 && produtoIndex < produtosVendidos.size() && i < produtosVendidosPreco.size()) {
+                if (!precoProdutos.get(produtoIndex).equals(produtoVendidoPreco)) {
+                    error++;
+                }
+
+            }
+
+        }
+        return error;
+    }
+
+    /**
+     * Compares two integer arrays to check if each element in the first array is a
+     * square of the corresponding element in the second array.
+     *
+     * @param a The first integer array to be compared.
+     * @param b The second integer array to be compared.
+     * @return true if each element in array 'a' is a square of the corresponding
+     *         element in array 'b', false otherwise.
+     * @throws IllegalArgumentException If either 'a' or 'b' is null, or if the
+     *                                  lengths of 'a' and 'b' are different.
+     */
+    public static boolean comp(int[] a, int[] b) {
+        if (a == null || b == null || a.length != b.length) {
+            throw new IllegalArgumentException("Both arrays 'a' and 'b' must not be null and have the same length.");
+        }
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] * a[i] != b[i]) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+    /**
+     * Calculates the sum of the first 'n' odd numbers in a specific row pattern.
+     * Each row consists of consecutive odd numbers starting from the square of the
+     * row number.
+     * For example, the first row starts with 1, the second row starts with 3, the
+     * third row starts with 7, and so on.
+     * 
+     * @param n The row number for which to calculate the sum of odd numbers (must
+     *          be a positive integer).
+     * @return The sum of the first 'n' odd numbers in the specified row.
+     * @throws IllegalArgumentException If 'n' is not a positive integer.
+     */
+    public static int rowSumOddNumbers(int n) {
+        if (n <= 0) {
+            throw new IllegalArgumentException("n must be a positive integer.");
+        }
+
+        int startingNumber = n * n;
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += startingNumber + 2 * i;
+        }
+
+        return sum;
     }
 
 }
