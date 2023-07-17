@@ -15,7 +15,6 @@ import java.util.List;
 class ApiWithOutFm {
 
     static public int findGreaterOrequal50(List<String> stringList) {
-
         Pattern pattern = Pattern.compile("age=(\\d+)");
         Matcher matcher = pattern.matcher(stringList.get(0));
 
@@ -30,15 +29,12 @@ class ApiWithOutFm {
     }
 
     public static void main(String[] args) {
-
         System.setProperty("http.agent", "Chrome");
 
         try {
-
             URL url = new URL("https://coderbyte.com/api/challenges/json/age-counting");
 
             try {
-
                 URLConnection connection = url.openConnection();
                 InputStream inputStream = connection.getInputStream();
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -48,12 +44,15 @@ class ApiWithOutFm {
 
                 System.out.println(findGreaterOrequal50(stringList));
 
+                reader.close();
+                inputStream.close();
+
             } catch (IOException ioEx) {
-                System.out.println(ioEx);
+                System.out.println("Erro ao ler a resposta da API: " + ioEx);
             }
 
         } catch (MalformedURLException malEx) {
-            System.out.println(malEx);
+            System.out.println("URL mal formada: " + malEx);
         }
 
     }
