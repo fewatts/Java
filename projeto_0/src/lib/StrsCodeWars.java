@@ -185,4 +185,37 @@ public class StrsCodeWars {
         return (firstChar == 'r' || firstChar == 'R') ? name + " plays banjo" : name + " does not play banjo";
     }
 
+    /**
+     * Counts the number of unique duplicate characters in the input string,
+     * is case sensitivity.
+     *
+     * The method takes a string as input and iterates through each character to
+     * count the unique duplicates.
+     * It considers the characters as duplicates regardless of case, i.e., 'a' and
+     * 'A' will be counted as duplicates.
+     *
+     * @param text The input string in which to count the unique duplicate
+     *             characters.
+     * @return The number of unique duplicate characters in the input string,
+     *         with case sensitivity.
+     */
+    public static int duplicateCount(String text) {
+        char[] charArray = text.toCharArray();
+        Set<Character> duplicates = new HashSet<>();
+        Set<Character> markedCharacters = new HashSet<>();
+
+        for (char currentChar : charArray) {
+            char lowerCaseChar = Character.toLowerCase(currentChar);
+
+            if (markedCharacters.contains(lowerCaseChar)) {
+                duplicates.add(lowerCaseChar);
+            } else {
+                markedCharacters.add(lowerCaseChar);
+            }
+
+        }
+        return duplicates.size();
+    }
+
 }
+    

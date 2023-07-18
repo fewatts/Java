@@ -33,6 +33,7 @@ public class MathCodewars {
             } else if (arr[i] < min) {
                 min = arr[i];
             }
+
         }
         return new int[] { min, max };
     }
@@ -161,7 +162,6 @@ public class MathCodewars {
         for (int i = 0; i < n; i++) {
             multiples[i] = x * (i + 1);
         }
-
         return multiples;
     }
 
@@ -194,7 +194,6 @@ public class MathCodewars {
             max = Math.max(max, currentNum);
             min = Math.min(min, currentNum);
         }
-
         return max + " " + min;
     }
 
@@ -330,7 +329,6 @@ public class MathCodewars {
             for (int i = start; i <= end; i++) {
                 sum += i;
             }
-
             return sum;
         }
 
@@ -368,7 +366,6 @@ public class MathCodewars {
         for (int i = 6; i < 10; i++) {
             phoneNumber.append(numbers[i]);
         }
-
         return phoneNumber.toString();
     }
 
@@ -501,8 +498,38 @@ public class MathCodewars {
         for (int i = 0; i < n; i++) {
             sum += startingNumber + 2 * i;
         }
-
         return sum;
+    }
+
+    /**
+     * Sorts the digits of the input integer in descending order and returns the
+     * sorted integer.
+     *
+     * The method takes an integer as input, converts it to a string to extract
+     * individual digits.
+     * It then sorts the characters representing the digits in ascending order and
+     * reverses the string.
+     * Finally, the reversed string is converted back to an integer and returned as
+     * the result.
+     *
+     * For example, if the input is 3456534, the method will sort the digits in
+     * ascending order (3453456)
+     * and then reverse the string to get 6655433 as the sorted integer.
+     *
+     * @param num The integer whose digits need to be sorted in descending order.
+     * @return The integer with its digits sorted in descending order.
+     */
+    public static int sortDesc(final int num) {
+        String numStr = Integer.toString(num);
+        char[] charArray = numStr.toCharArray();
+
+        Arrays.sort(charArray);
+
+        StringBuilder awn = new StringBuilder(new String(charArray));
+
+        awn.reverse();
+
+        return Integer.parseInt(awn.toString());
     }
 
 }
