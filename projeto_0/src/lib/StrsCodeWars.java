@@ -1,6 +1,8 @@
 package lib;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -217,5 +219,50 @@ public class StrsCodeWars {
         return duplicates.size();
     }
 
+    /**
+     * Counts the number of vowels (i.e., lowercase 'a', 'e', 'i', 'o', 'u') in the
+     * given string.
+     * This method uses regular expression matching to find all occurrences of
+     * vowels in the input string.
+     *
+     * @param str The input string in which vowels need to be counted.
+     * @return The number of vowels (i.e., lowercase 'a', 'e', 'i', 'o', 'u') found
+     *         in the input string.
+     * @throws NullPointerException If the input string 'str' is null.
+     *
+     * @implNote This method uses a regular expression pattern to match each vowel
+     *           in the input string.
+     *           The pattern "[aeiou]" is used to find any character in the string
+     *           that is a vowel (i.e., 'a', 'e', 'i', 'o', 'u').
+     *           The Matcher class is then used to find all occurrences of the
+     *           pattern in the string.
+     *           The count of occurrences is incremented for each match found, and
+     *           the final count is returned as the result.
+     *
+     * @implSpec This method assumes that the input string contains only lowercase
+     *           characters.
+     *           Any uppercase vowels or non-alphabetic characters will not be
+     *           considered as vowels in the count.
+     *           For example, 'A' or 'E' will not be counted as vowels, and
+     *           punctuation marks will be ignored.
+     *
+     * @example
+     *          {@code
+     * String input = "Hello, how are you today?";
+     * int result = getCount(input);
+     * // The result will be 7, as there are 7 vowels ('e', 'o', 'o', 'a', 'e', 'o', 'a') in the input string.
+     * }
+     *
+     * @see Matcher
+     * @see Pattern
+     */
+    public static int getCount(String str) {
+        Matcher matcher = Pattern.compile("[aeiou]").matcher(str);
+        int count = 0;
+        while (matcher.find()) {
+            count++;
+        }
+        return count;
+    }
+
 }
-    
