@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
 
@@ -530,6 +531,59 @@ public class MathCodewars {
         awn.reverse();
 
         return Integer.parseInt(awn.toString());
+    }
+
+    /**
+     * Calculates the sum of a specific series up to the specified number of terms.
+     *
+     * The series is defined as follows: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 + ...
+     * Each term in the series is a fraction where the numerator is 1, and the
+     * denominator starts from 1
+     * and increments by 3 for each subsequent term (1, 4, 7, 10, 13, 16, ...).
+     *
+     * The function returns the sum of the series as a string, rounded to 2 decimal
+     * places.
+     *
+     * If the input value 'numTerms' is 0 or negative, the function returns "0.00".
+     *
+     * @param numTerms The number of terms to consider in the series. It must be a
+     *                 positive integer.
+     * @return A string representation of the sum of the series rounded to 2 decimal
+     *         places.
+     *
+     * @throws IllegalArgumentException If 'numTerms' is less than or equal to 0.
+     *
+     * @implNote The function uses a loop to iterate through the terms of the series
+     *           and calculate their sum.
+     *           The sum is initialized to 1.0 for the first term (i = 0), and then
+     *           subsequent terms are added iteratively.
+     *           The denominator of each term is calculated as (4 + 3 * i) where 'i'
+     *           is the loop index.
+     *           The final sum is returned as a string, formatted to 2 decimal
+     *           places using DecimalFormat.
+     *
+     * @implSpec This implementation assumes that the input 'numTerms' is a positive
+     *           integer.
+     *           Negative values or 0 will result in an IllegalArgumentException
+     *           being thrown.
+     *
+     * @example
+     *          seriesSum(5); // Returns "1.57" as the series has 5 terms: 1 + 1/4 +
+     *          1/7 + 1/10 + 1/13 = 1.57
+     */
+    public static String seriesSum(int numTerms) {
+        if (numTerms <= 0)
+            return "0.00";
+
+        double sum = 1.0; 
+
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
+        for (int i = 1, denominator = 4; i < numTerms; i++, denominator += 3) {
+            sum += 1.0 / denominator;
+        }
+
+        return decimalFormat.format(sum);
     }
 
 }
