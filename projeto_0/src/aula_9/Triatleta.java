@@ -4,7 +4,6 @@ public class Triatleta extends Pessoa implements Ciclista, Corredor, Nadador{
 
 	public Triatleta(String nome) {
 		super(nome);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

@@ -265,4 +265,52 @@ public class StrsCodeWars {
         return count;
     }
 
+    /**
+     * Removes all occurrences of space characters (' ') from the input string.
+     *
+     * @param x The input string from which spaces will be removed.
+     * @return A new string with all spaces removed from the input string.
+     * @throws NullPointerException If the input string 'x' is null.
+     */
+    public static String noSpace(final String x) {
+        StringBuilder r = new StringBuilder();
+
+        for (char s : x.toCharArray()) {
+            if (s != ' ') {
+                r.append(s);
+            }
+
+        }
+        return r.toString();
+    }
+
+    /**
+     * Generates a string that counts the number of sheep up to the given input
+     * number.
+     *
+     * The generated string will consist of individual counts of sheep separated by
+     * ellipsis ("...").
+     * The counts start from 1 and go up to the given input number.
+     *
+     * @param num The number of sheep to count up to.
+     * @return A string containing the counts of sheep up to the given number,
+     *         separated by ellipsis ("...").
+     * @throws IllegalArgumentException If the input number 'num' is less than or
+     *                                  equal to zero.
+     */
+    public static String countingSheep(int num) {
+        if (num <= 0) {
+            throw new IllegalArgumentException("Input number 'num' must be greater than zero.");
+        }
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 1; i <= num; i++) {
+            String sheepCount = i + " Sheep...";
+            result.append(sheepCount);
+        }
+
+        return result.toString();
+    }
+
 }

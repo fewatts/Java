@@ -575,7 +575,7 @@ public class MathCodewars {
         if (numTerms <= 0)
             return "0.00";
 
-        double sum = 1.0; 
+        double sum = 1.0;
 
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
@@ -584,6 +584,47 @@ public class MathCodewars {
         }
 
         return decimalFormat.format(sum);
+    }
+
+    /**
+     * Returns the result of a simple multiplication based on the input number.
+     *
+     * If the input number is even, it multiplies the number by 8.
+     * If the input number is odd, it multiplies the number by 9.
+     *
+     * @param n The input number for which the simple multiplication will be
+     *          performed.
+     * @return The result of the simple multiplication based on the input number.
+     */
+    public static int simpleMultiplication(int n) {
+        return (n % 2 == 0) ? n * 8 : n * 9;
+    }
+
+    /**
+     * Calculates the number of times a bouncing ball passes in front of a window.
+     *
+     * @param h      The initial height of the ball above the ground, in meters.
+     *               Must be greater than 0.
+     * @param bounce The bounce rate of the ball. Must be greater than 0 and less
+     *               than 1.
+     * @param window The height of the window above the ground, in meters. Must be
+     *               less than 'h'.
+     * @return The number of times the ball passes in front of the window, including
+     *         the initial fall and all bounces.
+     *         Returns -1 if any of the input parameters is invalid or does not
+     *         fulfill the conditions.
+     */
+    public static int bouncingBall(double h, double bounce, double window) {
+        if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+            return -1;
+        }
+        int visiblePasses = 1;
+        double currentHeight = h;
+        while (currentHeight * bounce > window) {
+            currentHeight *= bounce;
+            visiblePasses += 2;
+        }
+        return visiblePasses;
     }
 
 }
