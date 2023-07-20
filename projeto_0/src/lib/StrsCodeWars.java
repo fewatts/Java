@@ -313,4 +313,34 @@ public class StrsCodeWars {
         return result.toString();
     }
 
+    /**
+     * Given a string of digits, replaces any digit below '5' with '0' and any digit
+     * '5' and above with '1'.
+     *
+     * @param numberString The input string containing a sequence of digits. It will
+     *                     not be empty.
+     * @return The resulting string where each digit below '5' is replaced with '0',
+     *         and each digit '5' and above is replaced with '1'.
+     */
+    public static String fakeBin(String numberString) {
+        return numberString.chars()
+                .mapToObj(c -> (c < '5') ? '0' : '1')
+                .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append)
+                .toString();
+    }
+
+    /**
+     * Calculates the binary representation of the sum of two integers.
+     *
+     * The method takes two integers 'a' and 'b', adds them together, and then
+     * converts the sum to its binary representation.
+     *
+     * @param a The first integer to be added.
+     * @param b The second integer to be added.
+     * @return The binary representation of the sum of 'a' and 'b'.
+     */
+    public static String binaryAddition(int a, int b) {
+        return Integer.toBinaryString(a + b);
+    }
+
 }

@@ -30,4 +30,21 @@ public class GamesCodeWars {
 
     }
 
+    /**
+     * Determines whether an alarm should be set or not based on the employment and
+     * vacation status.
+     *
+     * @param employed A boolean representing the employment status. True if
+     *                 employed, false otherwise.
+     * @param vacation A boolean representing the vacation status. True if on
+     *                 vacation, false otherwise.
+     * @return True if the alarm should be set, which means the person is employed
+     *         and not on vacation.
+     *         False if the alarm should not be set, which means the person is
+     *         either not employed or on vacation.
+     */
+    public static boolean setAlarm(boolean employed, boolean vacation) {
+        return employed && !vacation;
+    }
+
 }

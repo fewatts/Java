@@ -582,7 +582,6 @@ public class MathCodewars {
         for (int i = 1, denominator = 4; i < numTerms; i++, denominator += 3) {
             sum += 1.0 / denominator;
         }
-
         return decimalFormat.format(sum);
     }
 
@@ -625,6 +624,61 @@ public class MathCodewars {
             visiblePasses += 2;
         }
         return visiblePasses;
+    }
+
+    /**
+     * Calculates the number of years needed to reach or surpass a target
+     * population.
+     *
+     * The population increases annually based on a given percent growth rate and
+     * the number of new inhabitants arriving each year.
+     *
+     * @param p0      The initial population at the beginning of the first year.
+     * @param percent The annual percent growth rate. It should be a positive or
+     *                null floating-point number.
+     * @param aug     The number of new inhabitants arriving each year. It can be
+     *                positive (population growth) or negative (population
+     *                decrease).
+     * @param p       The target population to reach or surpass.
+     * @return The number of years needed to achieve the target population, rounded
+     *         up to the nearest integer.
+     * @throws IllegalArgumentException If percent is a negative number or aug is
+     *                                  zero.
+     */
+    public static int nbYear(int p0, double percent, int aug, int p) {
+        if (percent < 0 || aug == 0) {
+            throw new IllegalArgumentException(
+                    "The percent growth rate should be a positive or null number, and the number of new inhabitants should be non-zero.");
+        }
+
+        int years = 0;
+
+        while (p0 < p) {
+            p0 += p0 * percent / 100 + aug;
+            years++;
+        }
+        return years;
+    }
+
+    /**
+     * Calculates the product of all elements in the input integer array, except the
+     * last element.
+     *
+     * The method multiplies each element in the array, starting from the first
+     * element (index 0),
+     * up to the second-to-last element (index length - 2).
+     *
+     * @param x The input integer array.
+     * @return The product of all elements in the array, except the last element.
+     *         Returns 1 if the array is empty or contains only one element.
+     */
+    public static int grow(int[] x) {
+        int result = 1;
+
+        for (int i = 0; i < x.length; i++) {
+            result *= x[i];
+        }
+        return result;
     }
 
 }
