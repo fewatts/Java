@@ -82,6 +82,7 @@ public class StrsCodeWars {
                 distinctString.append(c);
                 previousChar = c;
             }
+            
         }
         return distinctString.toString();
     }

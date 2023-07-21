@@ -681,4 +681,55 @@ public class MathCodewars {
         return result;
     }
 
+    /**
+     * Calculates the "digPow" for a given number and exponent.
+     *
+     * The "digPow" is the value of "k" such that when you raise each digit of the
+     * given number "n" to consecutive powers
+     * starting from "p" and then sum them up, you get "n * k".
+     *
+     * @param n The input integer for which to calculate the "digPow".
+     * @param p The starting exponent value for raising each digit of the number "n"
+     *          to consecutive powers.
+     * @return The calculated "digPow" value if it exists, or -1 if no such value
+     *         can be found.
+     */
+    public static long digPow(int n, int p) {
+        int sum = 0;
+        String nums = Integer.toString(n);
+        char[] numsArray = nums.toCharArray();
+
+        for (int i = 0; i < numsArray.length; i++) {
+            sum += Math.pow(Character.getNumericValue(numsArray[i]), p);
+            p++;
+        }
+        return (sum % n == 0) ? sum / n : -1;
+    }
+
+    /**
+     * Calculates the number of cubes required to construct a building with a given
+     * total volume (m).
+     *
+     * The "findNb" function determines the number of cubes (n) required to
+     * construct a building where the cube at the bottom
+     * will have a volume of n^3, the cube above will have a volume of (n-1)^3, and
+     * so on until the top, which will have a
+     * volume of 1^3. The function iteratively calculates the value of "n" by
+     * incrementing "n" and adding the cubes of "n"
+     * to the sum until the sum becomes greater than or equal to "m."
+     *
+     * @param m The total volume of the building to be constructed.
+     * @return The number of cubes (n) required to construct the building with the
+     *         given total volume (m). If no such "n"
+     *         exists, it returns -1.
+     */
+    public static long findNb(long m) {
+        long sum = 0, cubes = 0;
+
+        while (sum < m) {
+            sum += ++cubes * cubes * cubes;
+        }
+        return sum == m ? cubes : -1;
+    }
+
 }
