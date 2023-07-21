@@ -7,6 +7,7 @@ import java.util.Random;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * A utility class containing various mathematical operations on arrays and
@@ -730,6 +731,32 @@ public class MathCodewars {
             sum += ++cubes * cubes * cubes;
         }
         return sum == m ? cubes : -1;
+    }
+
+    /**
+     * This method takes a list of integers representing a preference list and
+     * returns the original array
+     * that was used to generate the preference list. The original array is computed
+     * by performing bitwise XOR
+     * between consecutive elements in the preference list and the previous element
+     * (or 0 if it's the first element).
+     * The method preserves the size of the preference list and returns a new list
+     * containing the elements of the
+     * original array.
+     *
+     * @param pref The list of integers representing the preference list.
+     * @return The original array that generated the given preference list.
+     * @throws NullPointerException If the input preference list is null.
+     */
+    public static List<Integer> getOriginalArray(List<Integer> pref) {
+        int n = pref.size();
+
+        List<Integer> originalArray = new ArrayList<>(n);
+
+        for (int i = 0; i < n; i++) {
+            originalArray.add(pref.get(i) ^ (i > 0 ? pref.get(i - 1) : 0));
+        }
+        return originalArray;
     }
 
 }
