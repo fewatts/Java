@@ -82,7 +82,7 @@ public class StrsCodeWars {
                 distinctString.append(c);
                 previousChar = c;
             }
-            
+
         }
         return distinctString.toString();
     }
@@ -342,6 +342,65 @@ public class StrsCodeWars {
      */
     public static String binaryAddition(int a, int b) {
         return Integer.toBinaryString(a + b);
+    }
+
+    /**
+     * Counts the occurrences of each character in a given string.
+     *
+     * This method iterates through the provided string and counts the occurrences
+     * of each character
+     * present in the string. It stores the results in a map, where each character
+     * is associated with
+     * its number of occurrences in the string.
+     *
+     * @param str The input string to be analyzed.
+     * @return A map containing the characters in the string as keys and their
+     *         respective counts as values.
+     */
+    public static Map<Character, Integer> count(String str) {
+        Map<Character, Integer> occurrences = new HashMap<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            occurrences.put(c, occurrences.getOrDefault(c, 0) + 1);
+        }
+        return occurrences;
+    }
+
+    /**
+     * Finds the highest scoring word in a string of words.
+     *
+     * Each letter of a word scores points according to its position in the
+     * alphabet: a = 1, b = 2, c = 3, and so on.
+     * The method splits the input string into individual words, calculates the
+     * score for each word based on the position
+     * of each character in the alphabet, and returns the word with the highest
+     * score. If multiple words have the same
+     * highest score, the method returns the word that appears earliest in the
+     * original string.
+     *
+     * @param s The input string containing words separated by spaces.
+     * @return The word with the highest score in the string. If the input string is
+     *         empty, an empty string is returned.
+     */
+    public static String high(String s) {
+        String[] wordArray = s.split(" ");
+        int maxScore = 0;
+        String highestScoringWord = "";
+
+        for (String word : wordArray) {
+            int score = 0;
+            for (char c : word.toCharArray()) {
+                score += (c - 'a' + 1);
+            }
+            
+            if (score > maxScore) {
+                maxScore = score;
+                highestScoringWord = word;
+            }
+
+        }
+        return highestScoringWord;
     }
 
 }
