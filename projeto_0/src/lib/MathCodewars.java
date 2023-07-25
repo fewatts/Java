@@ -804,4 +804,25 @@ public class MathCodewars {
         return "Fission caused is equivalent to: " + energyReleased / energyTsarBomba + " Tsar bomb/s";
     }
 
+    /**
+     * Finds the first non-consecutive element in the given integer array.
+     *
+     * @param array The input integer array to search for non-consecutive elements.
+     * @return The first non-consecutive element in the array, or null if all
+     *         elements are consecutive.
+     * @throws NullPointerException if the input array is null.
+     */
+    static Integer find(final int[] array) {
+        if (array.length == 1)
+            return null;
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] + 1 != array[i + 1]) {
+                return array[i + 1];
+            }
+            
+        }
+        return null;
+    }
+
 }
