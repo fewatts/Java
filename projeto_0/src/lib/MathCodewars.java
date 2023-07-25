@@ -759,4 +759,49 @@ public class MathCodewars {
         return originalArray;
     }
 
+    /**
+     * Calculates the energy released by advanced nuclear fission based on the mass
+     * of uranium and the neutron multiplication factor.
+     *
+     * The energy is estimated using the famous equation E=mc², considering various
+     * factors:
+     * - Efficiency factor (EFFICIENCY_FACTOR): represents the efficiency of the
+     * nuclear reactor or fission process.
+     * - Energy released by decay products (DECAY_PRODUCT_ENERGY): includes the
+     * energy released during the decay of fission products.
+     * - Neutron moderator effect (NEUTRON_MODERATOR_EFFECT): accounts for the
+     * influence of a moderator material, which can slow down neutrons and increase
+     * the likelihood of further fission reactions.
+     * - Conversion fraction (conversionFraction): fraction of uranium mass
+     * converted into energy during the fission process (typical value: 0.1%).
+     *
+     * The energy released is then adjusted by the neutron multiplication factor
+     * (neutronMultiplicationFactor),
+     * representing the number of neutrons produced per fission event, and the final
+     * energy is returned.
+     *
+     * @param uraniumMass                 The mass of uranium used in the fission
+     *                                    process in kilograms (kg).
+     * @param neutronMultiplicationFactor The neutron multiplication factor (k)
+     *                                    representing the number of neutrons
+     *                                    produced per fission event.
+     * @return The estimated energy released by advanced nuclear fission in joules,
+     *         as a ratio of parts of the Tsar Bomba's energy.
+     */
+    public static String calculateFissionEnergy(double uraniumMass, double neutronMultiplicationFactor) {
+        double energyTsarBomba = 2.1e17;
+
+        final double SPEED_OF_LIGHT = 3e8;
+        final double EFFICIENCY_FACTOR = 0.9;
+        final double DECAY_PRODUCT_ENERGY = 1e-13;
+        final double NEUTRON_MODERATOR_EFFECT = 0.8;
+        double conversionFraction = 0.001;
+
+        double energyReleased = conversionFraction * uraniumMass * Math.pow(SPEED_OF_LIGHT, 2) * EFFICIENCY_FACTOR;
+        energyReleased += DECAY_PRODUCT_ENERGY;
+        energyReleased *= neutronMultiplicationFactor * NEUTRON_MODERATOR_EFFECT;
+
+        return "Fission caused is equivalent to: " + energyReleased / energyTsarBomba + " Tsar bomb/s";
+    }
+
 }
