@@ -393,7 +393,7 @@ public class StrsCodeWars {
             for (char c : word.toCharArray()) {
                 score += (c - 'a' + 1);
             }
-            
+
             if (score > maxScore) {
                 maxScore = score;
                 highestScoringWord = word;
@@ -401,6 +401,112 @@ public class StrsCodeWars {
 
         }
         return highestScoringWord;
+    }
+
+    /**
+     * Converts a given string to uppercase.
+     * 
+     * This method takes a string as input and returns a new string where all the
+     * alphabetic characters are converted to uppercase. Non-alphabetic characters
+     * remain unchanged.
+     * 
+     * @param str The string to be converted to uppercase.
+     * @return A new string with all alphabetic characters in uppercase and other
+     *         characters unchanged.
+     * @example String input = "Hello, World!";
+     *          String result = MakeUpperCase(input);
+     *          // result will be "HELLO, WORLD!".
+     * @example String input = "123abc";
+     *          String result = MakeUpperCase(input);
+     *          // result will be "123ABC".
+     * @example String input = "";
+     *          String result = MakeUpperCase(input);
+     *          // result will be an empty string "".
+     */
+    public static String MakeUpperCase(String str) {
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            char c = chars[i];
+            if (Character.isLetter(c)) {
+                if (c >= 'a' && c <= 'z') {
+                    chars[i] = (char) (c - 'a' + 'A');
+                }
+
+            }
+
+        }
+        return new String(chars);
+    }
+
+    /**
+     * Reverses the input string.
+     *
+     * This method takes a string as input and returns a new string containing the
+     * characters of the input string
+     * in reverse order.
+     *
+     * @param str The input string to be reversed.
+     * @return A new string with the characters of the input string in reverse
+     *         order.
+     * @throws NullPointerException If the input string is null.
+     *
+     * @implNote This method uses a StringBuilder to efficiently concatenate the
+     *           characters in reverse order,
+     *           resulting in a linear time complexity with respect to the length of
+     *           the input string.
+     *
+     * @implSpec The implementation of this method ensures that the original input
+     *           string is not modified.
+     *           The returned string is a new object with the reversed characters.
+     *
+     * @see StringBuilder
+     */
+    public static String solution(String str) {
+        StringBuilder a = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            a.append(str.charAt(i));
+        }
+        return a.toString();
+    }
+
+    /**
+     * Adds line numbers to each element in the input list of strings.
+     *
+     * This method takes a list of strings as input and returns a new list with line
+     * numbers
+     * added to each element. The line numbers are formatted as "<lineNumber>:
+     * <originalString>".
+     * The line numbers start from 1 and increment for each element in the input
+     * list.
+     *
+     * @param lines The input list of strings to which line numbers will be added.
+     * @return A new list of strings with line numbers added to each element.
+     * @throws NullPointerException If the input list or any of its elements is
+     *                              null.
+     *
+     * @implNote This method iterates through the input list using an enhanced for
+     *           loop (for-each loop)
+     *           and constructs a new list with line numbers using a StringBuilder
+     *           to efficiently
+     *           concatenate the formatted strings. It ensures that the original
+     *           input list is not modified.
+     *
+     * @implSpec The implementation of this method guarantees that the returned list
+     *           will have the same
+     *           number of elements as the input list, and the order of elements
+     *           will be preserved.
+     *
+     * @see ArrayList
+     * @see StringBuilder
+     */
+    public static List<String> number(List<String> lines) {
+        List<String> numberedLines = new ArrayList<>(lines.size());
+        int lineNumber = 0;
+        for (String line : lines) {
+            String numberedLine = ++lineNumber + ": " + line;
+            numberedLines.add(numberedLine);
+        }
+        return numberedLines;
     }
 
 }

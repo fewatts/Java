@@ -820,9 +820,103 @@ public class MathCodewars {
             if (array[i] + 1 != array[i + 1]) {
                 return array[i + 1];
             }
-            
+
         }
         return null;
+    }
+
+    /**
+     * Checks if a given integer is a factor of another integer.
+     * 
+     * A factor (also known as a divisor) is an integer that divides another integer
+     * without leaving a remainder.
+     * 
+     * @param base   The integer to be checked for factors.
+     * @param factor The integer to be checked as a potential factor of the base
+     *               number.
+     * @return {@code true} if the factor is indeed a factor of the base number,
+     *         {@code false} otherwise.
+     * @throws ArithmeticException if the factor is zero. A factor cannot be zero as
+     *                             division by zero is undefined.
+     * @example int base = 12;
+     *          int factor = 3;
+     *          boolean isFactor = checkForFactor(base, factor);
+     *          // isFactor will be true because 3 is a factor of 12.
+     * @example int base = 15;
+     *          int factor = 7;
+     *          boolean isFactor = checkForFactor(base, factor);
+     *          // isFactor will be false because 7 is not a factor of 15.
+     */
+    public static boolean checkForFactor(int base, int factor) throws ArithmeticException {
+        if (factor == 0) {
+            throw new ArithmeticException("Factor cannot be zero.");
+        }
+        return (base % factor == 0);
+    }
+
+    /**
+     * Checks if the given integer is a perfect square.
+     *
+     * This method takes an integer as input and checks if it is a perfect square.
+     * A perfect square is an integer that can be expressed as the square of another
+     * integer.
+     * For example, 9 is a perfect square because it can be expressed as 3^2 (3 *
+     * 3).
+     *
+     * @param n The integer to be checked for being a perfect square.
+     * @return {@code true} if the input integer is a perfect square, {@code false}
+     *         otherwise.
+     *
+     * @implNote This method calculates the square root of the input integer using
+     *           {@link Math#sqrt(double)}
+     *           and checks if the result has no decimal part (i.e., if it is an
+     *           integer value).
+     *           If the square root has no decimal part, it means the input integer
+     *           is a perfect square.
+     *
+     * @implSpec This method returns {@code false} for negative input integers since
+     *           they cannot be perfect squares.
+     *           It also returns {@code true} for 0 since 0 is considered a perfect
+     *           square.
+     *
+     * @see Math#sqrt(double)
+     */
+    public static boolean isSquare(int n) {
+        return Math.sqrt(n) % 1 == 0;
+    }
+
+    /**
+     * Calculates the number of years ago or in the future when the father was or
+     * will be twice as old as his son.
+     *
+     * This method takes the current ages of the father and his son as input and
+     * calculates the number of years
+     * ago or in the future when the father was or will be twice as old as his son.
+     * The result is always greater
+     * than or equal to 0, regardless of whether it was in the past or the future.
+     *
+     * @param dadYears The current age of the father.
+     * @param sonYears The current age of the son.
+     * @return The number of years ago or in the future when the father was or will
+     *         be twice as old as his son.
+     *
+     * @implNote This method calculates the father's age minus twice the son's age
+     *           and takes the absolute value
+     *           of the result to ensure a positive value. The absolute value
+     *           represents the number of years
+     *           ago or in the future when the father was or will be twice as old as
+     *           his son.
+     *
+     * @implSpec If the son's age is 0, this method returns the absolute value of
+     *           the father's current age since
+     *           it represents the number of years ago or in the future when the
+     *           father was or will be twice as old
+     *           as his son (assuming the son's age will not be 0 in the future).
+     *
+     * @see Math#abs(int)
+     */
+    public static int TwiceAsOld(int dadYears, int sonYears) {
+        return Math.abs(dadYears - (sonYears * 2));
     }
 
 }
