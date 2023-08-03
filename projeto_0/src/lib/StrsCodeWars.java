@@ -509,4 +509,16 @@ public class StrsCodeWars {
         return numberedLines;
     }
 
+    /**
+     * Converts a string into camel case by inserting a space before each uppercase
+     * letter.
+     *
+     * @param input The input string to be converted to camel case.
+     * @return A new string in camel case format with spaces inserted before
+     *         uppercase letters.
+     */
+    public static String camelCase(String input) {
+        return input.replaceAll("([A-Z])", " $1");
+    }
+
 }
