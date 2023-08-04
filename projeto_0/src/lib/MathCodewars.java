@@ -936,8 +936,8 @@ public class MathCodewars {
         }
 
         int indexN1 = 0,
-            indexN2 = 1,
-            indexN3 = 2;
+                indexN2 = 1,
+                indexN3 = 2;
 
         awnser[indexN1] = s[indexN1];
         awnser[indexN2] = s[indexN2];
@@ -952,6 +952,40 @@ public class MathCodewars {
             indexN3++;
         }
         return awnser;
+    }
+
+    /**
+     * Calculates the equivalent cat and dog years based on the given human years.
+     *
+     * @param humanYears The number of human years.
+     * @return An array containing human years, cat years, and dog years.
+     */
+    public static int[] humanYearsCatYearsDogYears(final int humanYears) {
+        int catY = 0,
+            dogY = 0;
+
+        // Check if humanYears is less than or equal to 1
+        if (humanYears <= 1) {
+            // Calculate cat and dog years for 1 human year or less
+            return (humanYears == 1) ? new int[] { humanYears, 15, 15 } : new int[] { humanYears, 0, 0 };
+        } else {
+            // Calculate cat and dog years for more than 1 human year
+            for (int i = 1; i < humanYears + 1; i++) {
+                if (i == 1) {
+                    catY += 15;
+                    dogY += 15;
+                } else if (i == 2) {
+                    catY += 9;
+                    dogY += 9;
+                } else {
+                    catY += 4;
+                    dogY += 5;
+                }
+
+            }
+
+        }
+        return new int[] { humanYears, catY, dogY };
     }
 
 }
