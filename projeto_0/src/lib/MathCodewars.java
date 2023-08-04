@@ -791,11 +791,11 @@ public class MathCodewars {
     public static String calculateFissionEnergy(double uraniumMass, double neutronMultiplicationFactor) {
         double energyTsarBomba = 2.1e17;
 
-        final double SPEED_OF_LIGHT = 3e8;
-        final double EFFICIENCY_FACTOR = 0.9;
-        final double DECAY_PRODUCT_ENERGY = 1e-13;
-        final double NEUTRON_MODERATOR_EFFECT = 0.8;
-        double conversionFraction = 0.001;
+        final double SPEED_OF_LIGHT = 3e8,
+                EFFICIENCY_FACTOR = 0.9,
+                DECAY_PRODUCT_ENERGY = 1e-13,
+                NEUTRON_MODERATOR_EFFECT = 0.8,
+                conversionFraction = 0.001;
 
         double energyReleased = conversionFraction * uraniumMass * Math.pow(SPEED_OF_LIGHT, 2) * EFFICIENCY_FACTOR;
         energyReleased += DECAY_PRODUCT_ENERGY;
@@ -917,6 +917,41 @@ public class MathCodewars {
      */
     public static int TwiceAsOld(int dadYears, int sonYears) {
         return Math.abs(dadYears - (sonYears * 2));
+    }
+
+    /**
+     * Generates a tribonacci sequence of length n based on the given seed values.
+     *
+     * @param s An array of seed values for the tribonacci sequence.
+     * @param n The length of the tribonacci sequence to generate.
+     * @return An array containing the tribonacci sequence of length n.
+     */
+    public static double[] tribonacci(double[] s, int n) {
+        double[] awnser = new double[n];
+        if (n <= 3) {
+            for (int i = 0; i < n; i++) {
+                awnser[i] = s[i];
+            }
+            return awnser;
+        }
+
+        int indexN1 = 0,
+            indexN2 = 1,
+            indexN3 = 2;
+
+        awnser[indexN1] = s[indexN1];
+        awnser[indexN2] = s[indexN2];
+        awnser[indexN3] = s[indexN3];
+
+        double currentValue = 0.0;
+        for (int i = 3; i < n; i++) {
+            currentValue = awnser[indexN1] + awnser[indexN2] + awnser[indexN3];
+            awnser[i] = currentValue;
+            indexN1++;
+            indexN2++;
+            indexN3++;
+        }
+        return awnser;
     }
 
 }
