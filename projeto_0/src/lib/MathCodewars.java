@@ -962,7 +962,7 @@ public class MathCodewars {
      */
     public static int[] humanYearsCatYearsDogYears(final int humanYears) {
         int catY = 0,
-            dogY = 0;
+                dogY = 0;
 
         // Check if humanYears is less than or equal to 1
         if (humanYears <= 1) {

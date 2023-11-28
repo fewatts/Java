@@ -520,5 +520,15 @@ public class StrsCodeWars {
     public static String camelCase(String input) {
         return input.replaceAll("([A-Z])", " $1");
     }
+    /**
+     * Checks if the URL is encripted or not
+     * @param input The input is the url
+     * @return the url is safe or the url is not safe or the url has invalid format
+     */
+    public static String safeUrl(String input){
+        if(input.startsWith("www."))
+         return "Invalid URL";
+        return input.startsWith("https://") ? "URL is safe" : "URL is not safe";
+    }
 
 }
